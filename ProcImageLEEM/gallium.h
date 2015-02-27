@@ -30,10 +30,13 @@ public:
     vector<Mat> getVideoSeg();
     void setVideoOri(vector<Mat> video);
     vector<Mat> getVideoOri();
+    void setFps(int f);
+    int getFps();
 
 private:
     vector<Mat> videoOri;
     vector<Mat> videoSeg;
+    int fps;
 };
 
 #endif // GALLIUM_H

@@ -1,5 +1,7 @@
 #include "gallium.h"
 
+#include <QDebug>
+
 Gallium::Gallium() {
 }
 
@@ -22,6 +24,13 @@ vector<Mat> Gallium::readVideo(string arq) {
         return video;
     }
 
+    //Get FPS video
+    if(cap.get(CV_CAP_PROP_FPS) > 0 && !isnan(cap.get(CV_CAP_PROP_FPS)))
+        fps = (int)round( cap.get(CV_CAP_PROP_FPS));
+    else
+        fps = 60;
+    qDebug() << "Frame Rate:" << fps;
+
     while (true) {
         Mat frame;
 
@@ -43,8 +52,8 @@ vector<Mat> Gallium::readVideo(string arq) {
 }
 
 void Gallium::writeVideo(string arq) {
-    //Write video to file (60fps)  - .AVI file
-    VideoWriter outVideoW(arq, CV_FOURCC('P', 'I', 'M', '1'), 60, this->videoSeg.at(0).size(), true);
+    //Write video to file  - .AVI file
+    VideoWriter outVideoW(arq, CV_FOURCC('P', 'I', 'M', '1'), this->fps, this->videoSeg.at(0).size(), true);
     for (unsigned int i = 0; i < this->videoSeg.size(); i++) {
         //Write one frame at a time
         outVideoW.write(this->videoSeg.at(i));
@@ -64,6 +73,7 @@ void Gallium::segVideo(int threshCanny) {
 
         //Apply the MedianBlur filter to reduce noise
         medianBlur(mNew, mNew, 7);
+        medianBlur(mNew, mNew, 7);
 
         //Convert Mat (RGB) to GRAYSCALE
         cvtColor(videoOri.at(i), videoOri.at(i), CV_BGR2GRAY);
@@ -72,11 +82,12 @@ void Gallium::segVideo(int threshCanny) {
         //Create matrix AUX for threshold
         Mat aux;
         threshold(mNew, aux, 65, 255, CV_THRESH_BINARY);
-        GaussianBlur(aux, aux, Size(5, 5), 1, 0);
+        //GaussianBlur(aux, aux, Size(7, 7), 1, 0);
 
         //Find edge with Canny
         //aux = applyCanny(mNew, videoOri.at(i), threshCanny);
-        aux = applyCanny(aux, videoOri.at(i), threshCanny);
+        //aux = applyCanny(aux, mNew, threshCanny);
+        aux = applyCanny(aux, mNew, threshCanny);
 
         //Add Mat AUX on the list of Mat segmented
         this->videoSeg.push_back(aux);
@@ -134,4 +145,12 @@ void Gallium::setVideoOri(vector<Mat> video) {
 
 vector<Mat> Gallium::getVideoOri() {
     return this->videoOri;
+}
+
+void Gallium::setFps(int f){
+    this->fps = f;
+}
+
+int Gallium::getFps(){
+    return this->fps;
 }

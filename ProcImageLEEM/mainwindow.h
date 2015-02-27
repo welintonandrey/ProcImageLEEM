@@ -25,7 +25,8 @@ public:
 
 private slots:
     void on_actionOpen_triggered();
-    void createSubWindow();
+    void createSubWindow(QString str);
+    void on_actionSave_triggered();
 
 private:
     Ui::MainWindow *ui;

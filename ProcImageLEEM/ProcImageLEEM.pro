@@ -23,7 +23,8 @@ HEADERS  += mainwindow.h \
     gallium.h \
     openfiledialog.h \
     subwindowmdi.h \
-    outvideo.h
+    outvideo.h \
+    convertImage.h
 
 FORMS    += mainwindow.ui \
     openfiledialog.ui \

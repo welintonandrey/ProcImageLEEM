@@ -6,6 +6,8 @@
 #include <QDesktopWidget>
 #include "subwindowmdi.h"
 
+#include "convertImage.h"
+using namespace ASM;
 
 using namespace std;
 using namespace cv;
@@ -28,38 +30,38 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+///Event resize windows
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
     this->ui->listOpenVideo->resize(171,this->height()-85);
     this->ui->mdiOpenVideo->resize(this->width()-171,this->height()-85);
 }
 
-void MainWindow::createSubWindow()
+///Create subwindow opened videos
+void MainWindow::createSubWindow(QString str)
 {
-    SubWindowMdi *subW = new SubWindowMdi(ui->mdiOpenVideo);
+    SubWindowMdi *subW = new SubWindowMdi(ui->mdiOpenVideo, str);
     subW->show();
     ui->mdiOpenVideo->update();
     ui->mdiOpenVideo->repaint();
 
 }
 
+///Event open file
 void MainWindow::on_actionOpen_triggered()
 {
-    /*QString filename = QFileDialog::getOpenFileName(
+    //Get file name
+    QString filename = QFileDialog::getOpenFileName(
             this,
             tr("Open Document"),
             QDir::currentPath(),
             tr("Video files (*.avi *.mov);;All files (*.*)") );
 
-    */
-
-    //OpenFileDialog *o = new OpenFileDialog(this);
-    //o->show();
-
-    //teste
-    createSubWindow();
-
+    if(!filename.toStdString().empty())
+    {
+        //Create SubWindow
+        createSubWindow(filename);
+    }
 
     /*
     //Load video
@@ -85,4 +87,15 @@ void MainWindow::on_actionOpen_triggered()
         i++;
     }
     */
+}
+
+void MainWindow::on_actionSave_triggered()
+{
+    QString fileName = QFileDialog::getSaveFileName(this,
+             tr("Save Address Book"), "",
+             tr("Address Book (*.abk);;All Files (*)"));
+
+    OutVideo *o = (OutVideo*) this->ui->mdiOpenVideo->currentSubWindow()->widget();
+    cout << fileName.toStdString() << endl;
+    o->saveFileAs(fileName);
 }

@@ -6,54 +6,77 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>452</width>
-    <height>224</height>
+    <width>851</width>
+    <height>484</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QDial" name="dial">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>70</y>
-     <width>50</width>
-     <height>64</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QSlider" name="horizontalSlider">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>160</y>
-     <width>431</width>
-     <height>29</height>
+     <y>10</y>
+     <width>821</width>
+     <height>351</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QGroupBox" name="gbOriginal">
+      <property name="title">
+       <string>Original Video</string>
+      </property>
+      <widget class="QLabel" name="lbVideoOri">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>380</width>
+         <height>320</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="gbSegmented">
+      <property name="title">
+       <string>Segmented Video</string>
+      </property>
+      <widget class="QLabel" name="lbVideoSeg">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>380</width>
+         <height>320</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2</width>
+     <height>2</height>
+    </rect>
    </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2"/>
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>horizontalSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>dial</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>200</x>
-     <y>174</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>217</x>
-     <y>106</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
