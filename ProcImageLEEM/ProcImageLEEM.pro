@@ -13,11 +13,21 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    gallium.cpp \
+    openfiledialog.cpp \
+    subwindowmdi.cpp \
+    outvideo.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    gallium.h \
+    openfiledialog.h \
+    subwindowmdi.h \
+    outvideo.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    openfiledialog.ui \
+    outvideo.ui
 
 #Libs OPENCV
 INCLUDEPATH += /usr/include/opencv

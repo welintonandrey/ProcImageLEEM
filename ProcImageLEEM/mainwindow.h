@@ -2,6 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QString>
+#include <vector>
+#include <iostream>
+#include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
 
 namespace Ui {
 class MainWindow;
@@ -14,6 +20,10 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+private slots:
+    void on_actionOpen_triggered();
+    void createSubWindow();
 
 private:
     Ui::MainWindow *ui;
