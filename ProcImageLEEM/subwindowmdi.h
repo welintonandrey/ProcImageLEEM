@@ -15,6 +15,7 @@ class SubWindowMdi : public QMdiSubWindow
 public:
     explicit SubWindowMdi(QWidget *parent = 0);
     ~SubWindowMdi();
+
 private:
     //OutWindow *out;
     OutVideo *out;

@@ -6,6 +6,7 @@
 #include <QDesktopWidget>
 #include "subwindowmdi.h"
 
+
 using namespace std;
 using namespace cv;
 
@@ -25,6 +26,13 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    this->ui->listOpenVideo->resize(171,this->height()-85);
+    this->ui->mdiOpenVideo->resize(this->width()-171,this->height()-85);
 }
 
 void MainWindow::createSubWindow()
