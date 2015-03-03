@@ -41,6 +41,13 @@
       <height>511</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QMdiArea{
+	border:2px solid gray;
+	border-radius:1px;
+	margin-bottom: 2px;
+}</string>
+    </property>
     <property name="verticalScrollBarPolicy">
      <enum>Qt::ScrollBarAsNeeded</enum>
     </property>
@@ -87,6 +94,13 @@
       <height>16777215</height>
      </size>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QListView{
+	border:2px solid gray;
+	border-radius:1px;
+	margin-bottom: 2px;
+}</string>
+    </property>
     <property name="sizeAdjustPolicy">
      <enum>QAbstractScrollArea::AdjustToContents</enum>
     </property>
@@ -108,6 +122,7 @@
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
     <addaction name="actionClose"/>
+    <addaction name="actionExit"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -124,8 +139,8 @@
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionOpen">
    <property name="icon">
-    <iconset>
-     <normaloff>../free-icons/ico/folder.ico</normaloff>../free-icons/ico/folder.ico</iconset>
+    <iconset resource="resource-images.qrc">
+     <normaloff>:/icons-png/icons/png/Folder.png</normaloff>:/icons-png/icons/png/Folder.png</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -133,8 +148,8 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset>
-     <normaloff>../free-icons/ico/save.ico</normaloff>../free-icons/ico/save.ico</iconset>
+    <iconset resource="resource-images.qrc">
+     <normaloff>:/icons-png/icons/png/Save.png</normaloff>:/icons-png/icons/png/Save.png</iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -142,15 +157,26 @@
   </action>
   <action name="actionClose">
    <property name="icon">
-    <iconset>
-     <normaloff>../free-icons/ico/close.ico</normaloff>../free-icons/ico/close.ico</iconset>
+    <iconset resource="resource-images.qrc">
+     <normaloff>:/icons-png/icons/png/Close.png</normaloff>:/icons-png/icons/png/Close.png</iconset>
    </property>
    <property name="text">
     <string>Close</string>
    </property>
   </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="resource-images.qrc">
+     <normaloff>:/icons-png/icons/png/Exit.png</normaloff>:/icons-png/icons/png/Exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resource-images.qrc"/>
+ </resources>
  <connections/>
 </ui>

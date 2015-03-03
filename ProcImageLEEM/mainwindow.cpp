@@ -62,31 +62,6 @@ void MainWindow::on_actionOpen_triggered()
         //Create SubWindow
         createSubWindow(filename);
     }
-
-    /*
-    //Load video
-    Gallium ga(filename);
-
-    //Threshold + Canny
-    ga.segVideo(100);
-
-    //Write Video on file
-    ga.writeVideo("out.avi");
-
-    //Exibe o resultado
-    int i = 0;
-    while (i != ga.getVideoOri().size()) {
-        //imshow("Original Video", ga.GetVideoOri().at(i));
-        //imshow("Segmented Video", ga.GetVideoSeg().at(i));
-        imshow("Uni Video", ga.getVideoSeg().at(i));
-
-        if (waitKey(10) == 27) {
-            cout << "esc key is pressed by user" << endl;
-            break;
-        }
-        i++;
-    }
-    */
 }
 
 void MainWindow::on_actionSave_triggered()
@@ -98,4 +73,9 @@ void MainWindow::on_actionSave_triggered()
     OutVideo *o = (OutVideo*) this->ui->mdiOpenVideo->currentSubWindow()->widget();
     cout << fileName.toStdString() << endl;
     o->saveFileAs(fileName);
+}
+
+void MainWindow::on_actionExit_triggered()
+{
+    this->~MainWindow();
 }

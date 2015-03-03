@@ -14,7 +14,6 @@ SubWindowMdi::SubWindowMdi(QWidget *parent, QString str) :
     this->setWindowTitle(str);
 
     out->loadVideo();
-    out->executeVideo();
 }
 
 SubWindowMdi::~SubWindowMdi()

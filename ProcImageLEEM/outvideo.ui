@@ -13,7 +13,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="">
+  <property name="windowIcon">
+   <iconset resource="resource-images.qrc">
+    <normaloff>:/icons-png/icons/png/Application.png</normaloff>:/icons-png/icons/png/Application.png</iconset>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -25,6 +29,19 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QGroupBox" name="gbOriginal">
+      <property name="styleSheet">
+       <string notr="true">QGroupBox{
+	border:2px solid gray;
+	border-radius:5px;
+	margin-top: 1ex;
+} 
+
+QGroupBox::title{
+	subcontrol-origin: margin;
+	subcontrol-position:top center;
+	padding:0 3px;
+}</string>
+      </property>
       <property name="title">
        <string>Original Video</string>
       </property>
@@ -33,9 +50,14 @@
         <rect>
          <x>10</x>
          <y>20</y>
-         <width>380</width>
+         <width>391</width>
          <height>320</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel { 
+qproperty-alignment: AlignCenter; 
+}</string>
        </property>
        <property name="text">
         <string/>
@@ -45,6 +67,19 @@
     </item>
     <item>
      <widget class="QGroupBox" name="gbSegmented">
+      <property name="styleSheet">
+       <string notr="true">QGroupBox{
+	border:2px solid gray;
+	border-radius:5px;
+	margin-top: 1ex;
+} 
+
+QGroupBox::title{
+	subcontrol-origin: margin;
+	subcontrol-position:top center;
+	padding:0 3px;
+}</string>
+      </property>
       <property name="title">
        <string>Segmented Video</string>
       </property>
@@ -53,9 +88,14 @@
         <rect>
          <x>10</x>
          <y>20</y>
-         <width>380</width>
+         <width>391</width>
          <height>320</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel { 
+qproperty-alignment: AlignCenter; 
+}</string>
        </property>
        <property name="text">
         <string/>
@@ -65,7 +105,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -76,7 +116,68 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2"/>
   </widget>
+  <widget class="QPushButton" name="btPlay">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>370</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="resource-images.qrc">
+     <normaloff>:/icons-png/icons/png/Play.png</normaloff>:/icons-png/icons/png/Play.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btPause">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>370</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="resource-images.qrc">
+     <normaloff>:/icons-png/icons/png/Pause.png</normaloff>:/icons-png/icons/png/Pause.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QSlider" name="horizontalSlider">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>370</y>
+     <width>721</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource-images.qrc"/>
+ </resources>
  <connections/>
 </ui>

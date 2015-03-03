@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QString>
 #include "gallium.h"
+#include "convertImage.h"
 
 namespace Ui {
 class OutVideo;
@@ -19,6 +20,9 @@ public:
     void loadVideo();
     void executeVideo();
     void saveFileAs(QString str);
+
+private slots:
+    void on_btPlay_clicked();
 
 private:
     Ui::OutVideo *ui;

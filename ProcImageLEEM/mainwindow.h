@@ -28,6 +28,8 @@ private slots:
     void createSubWindow(QString str);
     void on_actionSave_triggered();
 
+    void on_actionExit_triggered();
+
 private:
     Ui::MainWindow *ui;
 

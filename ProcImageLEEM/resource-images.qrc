@@ -1,0 +1,154 @@
+<RCC>
+    <qresource prefix="/icons-png">
+        <file>icons/png/3d bar chart.png</file>
+        <file>icons/png/Abort.png</file>
+        <file>icons/png/About.png</file>
+        <file>icons/png/Add.png</file>
+        <file>icons/png/Anchor.png</file>
+        <file>icons/png/Application.png</file>
+        <file>icons/png/Apply.png</file>
+        <file>icons/png/Back.png</file>
+        <file>icons/png/Bad mark.png</file>
+        <file>icons/png/Blue key.png</file>
+        <file>icons/png/Blue tag.png</file>
+        <file>icons/png/Boss.png</file>
+        <file>icons/png/Bottom.png</file>
+        <file>icons/png/Calculator.png</file>
+        <file>icons/png/Calendar.png</file>
+        <file>icons/png/Car key.png</file>
+        <file>icons/png/CD.png</file>
+        <file>icons/png/Clipboard.png</file>
+        <file>icons/png/Clock.png</file>
+        <file>icons/png/Close.png</file>
+        <file>icons/png/Compass.png</file>
+        <file>icons/png/Component.png</file>
+        <file>icons/png/Copy.png</file>
+        <file>icons/png/Create.png</file>
+        <file>icons/png/Cut.png</file>
+        <file>icons/png/Danger.png</file>
+        <file>icons/png/Database.png</file>
+        <file>icons/png/Delete.png</file>
+        <file>icons/png/Delivery.png</file>
+        <file>icons/png/Dial.png</file>
+        <file>icons/png/Disaster.png</file>
+        <file>icons/png/Dollar.png</file>
+        <file>icons/png/Down.png</file>
+        <file>icons/png/Download.png</file>
+        <file>icons/png/Eject.png</file>
+        <file>icons/png/E-mail.png</file>
+        <file>icons/png/Erase.png</file>
+        <file>icons/png/Error.png</file>
+        <file>icons/png/Euro.png</file>
+        <file>icons/png/Exit.png</file>
+        <file>icons/png/Fall.png</file>
+        <file>icons/png/Fast-forward.png</file>
+        <file>icons/png/Favourites.png</file>
+        <file>icons/png/Female.png</file>
+        <file>icons/png/Filter.png</file>
+        <file>icons/png/Find.png</file>
+        <file>icons/png/First.png</file>
+        <file>icons/png/First record.png</file>
+        <file>icons/png/Flag.png</file>
+        <file>icons/png/Folder.png</file>
+        <file>icons/png/Forbidden.png</file>
+        <file>icons/png/Forward.png</file>
+        <file>icons/png/Free bsd.png</file>
+        <file>icons/png/Go.png</file>
+        <file>icons/png/Go back.png</file>
+        <file>icons/png/Go forward.png</file>
+        <file>icons/png/Good-mark.png</file>
+        <file>icons/png/Green tag.png</file>
+        <file>icons/png/Heart.png</file>
+        <file>icons/png/Help.png</file>
+        <file>icons/png/Help book.png</file>
+        <file>icons/png/Help book 3d.png</file>
+        <file>icons/png/Hint.png</file>
+        <file>icons/png/Home.png</file>
+        <file>icons/png/How-to.png</file>
+        <file>icons/png/Hungup.png</file>
+        <file>icons/png/Info.png</file>
+        <file>icons/png/Key.png</file>
+        <file>icons/png/Last.png</file>
+        <file>icons/png/Last recor.png</file>
+        <file>icons/png/Left-right.png</file>
+        <file>icons/png/Lightning.png</file>
+        <file>icons/png/Linux.png</file>
+        <file>icons/png/List.png</file>
+        <file>icons/png/Load.png</file>
+        <file>icons/png/Lock.png</file>
+        <file>icons/png/Low rating.png</file>
+        <file>icons/png/Mail.png</file>
+        <file>icons/png/Male.png</file>
+        <file>icons/png/Medium rating.png</file>
+        <file>icons/png/Message.png</file>
+        <file>icons/png/Mobile-phone.png</file>
+        <file>icons/png/Modify.png</file>
+        <file>icons/png/Movie.png</file>
+        <file>icons/png/Music.png</file>
+        <file>icons/png/New.png</file>
+        <file>icons/png/New document.png</file>
+        <file>icons/png/Next.png</file>
+        <file>icons/png/Next track.png</file>
+        <file>icons/png/No.png</file>
+        <file>icons/png/No-entry.png</file>
+        <file>icons/png/Notes.png</file>
+        <file>icons/png/OK.png</file>
+        <file>icons/png/Paste.png</file>
+        <file>icons/png/Pause.png</file>
+        <file>icons/png/People.png</file>
+        <file>icons/png/Person.png</file>
+        <file>icons/png/Phone number.png</file>
+        <file>icons/png/Pie chart.png</file>
+        <file>icons/png/Pinion.png</file>
+        <file>icons/png/Play.png</file>
+        <file>icons/png/Playback.png</file>
+        <file>icons/png/Play-music.png</file>
+        <file>icons/png/Previous.png</file>
+        <file>icons/png/Previous record.png</file>
+        <file>icons/png/Problem.png</file>
+        <file>icons/png/Question.png</file>
+        <file>icons/png/Raise.png</file>
+        <file>icons/png/Record.png</file>
+        <file>icons/png/Red mark.png</file>
+        <file>icons/png/Redo.png</file>
+        <file>icons/png/Red star.png</file>
+        <file>icons/png/Red tag.png</file>
+        <file>icons/png/Refresh.png</file>
+        <file>icons/png/Remove.png</file>
+        <file>icons/png/Repair.png</file>
+        <file>icons/png/Report.png</file>
+        <file>icons/png/Retort.png</file>
+        <file>icons/png/Rewind.png</file>
+        <file>icons/png/Sad.png</file>
+        <file>icons/png/Save.png</file>
+        <file>icons/png/Search.png</file>
+        <file>icons/png/Shopping cart.png</file>
+        <file>icons/png/Smile.png</file>
+        <file>icons/png/Sound.png</file>
+        <file>icons/png/Stop.png</file>
+        <file>icons/png/Stop sign.png</file>
+        <file>icons/png/Sync.png</file>
+        <file>icons/png/Table.png</file>
+        <file>icons/png/Target.png</file>
+        <file>icons/png/Taxi.png</file>
+        <file>icons/png/Terminate.png</file>
+        <file>icons/png/Text.png</file>
+        <file>icons/png/Text preview.png</file>
+        <file>icons/png/Thumbs down.png</file>
+        <file>icons/png/Thumbs up.png</file>
+        <file>icons/png/Top.png</file>
+        <file>icons/png/Turn off.png</file>
+        <file>icons/png/Undo.png</file>
+        <file>icons/png/Unlock.png</file>
+        <file>icons/png/Up.png</file>
+        <file>icons/png/Update.png</file>
+        <file>icons/png/Up-down.png</file>
+        <file>icons/png/Upload.png</file>
+        <file>icons/png/User group.png</file>
+        <file>icons/png/View.png</file>
+        <file>icons/png/Warning.png</file>
+        <file>icons/png/Wrench.png</file>
+        <file>icons/png/Yes.png</file>
+        <file>icons/png/Zoom.png</file>
+    </qresource>
+</RCC>

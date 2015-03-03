@@ -25,11 +25,25 @@ vector<Mat> Gallium::readVideo(string arq) {
     }
 
     //Get FPS video
-    if(cap.get(CV_CAP_PROP_FPS) > 0 && !isnan(cap.get(CV_CAP_PROP_FPS)))
+    if(cap.get(CV_CAP_PROP_FPS) > 0 && !isnan(cap.get(CV_CAP_PROP_FPS))){
         fps = (int)round( cap.get(CV_CAP_PROP_FPS));
-    else
+        qDebug() << "Frame Rate:" << fps;
+    }
+    else{
+        qDebug() << "Frame Rate: Defaut";
         fps = 60;
-    qDebug() << "Frame Rate:" << fps;
+    }
+
+
+    //Get Frames video
+    if(cap.get(CV_CAP_PROP_FRAME_COUNT) > 0 && !isnan(cap.get(CV_CAP_PROP_FRAME_COUNT))){
+        this->frames = (int)round( cap.get(CV_CAP_PROP_FRAME_COUNT));
+        qDebug() << "Count Frames:" << this->frames;
+    }
+    else
+        qDebug() << "Count Frames: ERROR";
+
+
 
     while (true) {
         Mat frame;
