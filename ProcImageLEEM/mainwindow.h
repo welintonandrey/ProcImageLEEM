@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QString>
+#include <QListWidgetItem>
 #include <vector>
 #include <iostream>
 #include <opencv2/core/core.hpp>
@@ -21,14 +22,14 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void resizeEvent ( QResizeEvent * event );
+    void resizeEvent(QResizeEvent *event);
 
 private slots:
     void on_actionOpen_triggered();
     void createSubWindow(QString str);
     void on_actionSave_triggered();
-
     void on_actionExit_triggered();
+    void on_listOpenedItensClick(QListWidgetItem*);
 
 private:
     Ui::MainWindow *ui;

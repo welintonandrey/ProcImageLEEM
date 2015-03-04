@@ -34,12 +34,18 @@ public:
     int getFps();
     void setFrames(int f);
     int getFrames();
+    void setPosVideo(int pos);
+    int getPosVideo();
+    void setPosVideoAux(int posAux);
+    int getPosVideoAux();
 
 private:
     vector<Mat> videoOri;
     vector<Mat> videoSeg;
     int fps;
     int frames;
+    int posVideo;
+    int posVideoAux;
 };
 
 #endif // GALLIUM_H

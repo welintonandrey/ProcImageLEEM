@@ -67,7 +67,7 @@
      </brush>
     </property>
    </widget>
-   <widget class="QListView" name="listOpenVideo">
+   <widget class="QGroupBox" name="gbListOpenVideo">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -76,34 +76,38 @@
       <height>511</height>
      </rect>
     </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>411</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>171</width>
-      <height>16777215</height>
-     </size>
-    </property>
     <property name="styleSheet">
-     <string notr="true">QListView{
+     <string notr="true">QGroupBox{
+	border:2px solid gray;
+	border-radius:1px;
+} 
+
+QGroupBox::title{
+	subcontrol-origin: margin;
+	subcontrol-position:top center;
+	padding:0 3px;
+}</string>
+    </property>
+    <property name="title">
+     <string>Open Video List</string>
+    </property>
+    <widget class="QListWidget" name="listOpenVid">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>171</width>
+       <height>491</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QListWidget{
 	border:2px solid gray;
 	border-radius:1px;
 	margin-bottom: 2px;
 }</string>
-    </property>
-    <property name="sizeAdjustPolicy">
-     <enum>QAbstractScrollArea::AdjustToContents</enum>
-    </property>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -179,4 +183,7 @@
   <include location="resource-images.qrc"/>
  </resources>
  <connections/>
+ <slots>
+  <signal>on_listOpenedItensClick()</signal>
+ </slots>
 </ui>

@@ -1,5 +1,7 @@
 #include "outvideo.h"
 #include "ui_outvideo.h"
+#include <QTimer>
+#include <QDebug>
 
 OutVideo::OutVideo(QWidget *parent, QString str) :
     QWidget(parent),
@@ -8,6 +10,14 @@ OutVideo::OutVideo(QWidget *parent, QString str) :
     ui->setupUi(this);
 
     path = str;
+
+    timer = new QTimer(this);
+    connect(timer,SIGNAL(timeout()),this,SLOT(executeVideo()));
+
+    //Connect slots Slider
+    connect(ui->horizontalSlider,SIGNAL(sliderPressed()),this,SLOT(on_sliderFramePress()));
+    connect(ui->horizontalSlider,SIGNAL(sliderReleased()),this,SLOT(on_sliderFrameRelease()));
+    connect(ui->horizontalSlider,SIGNAL(sliderMoved(int)),this,SLOT(on_sliderFrameMove(int)));
 }
 
 OutVideo::~OutVideo()
@@ -19,8 +29,14 @@ void OutVideo::loadVideo(){
     //Load video
     ga = (path);
 
+    //Set maximum horizontalslider value with Frames
+    this->ui->horizontalSlider->setMaximum(ga.getFrames());
+
     //Threshold + Canny
     ga.segVideo(100);
+
+    //Show first frame
+    showMatOnQLabel(0);
 }
 
 void OutVideo::saveFileAs(QString str){
@@ -28,29 +44,72 @@ void OutVideo::saveFileAs(QString str){
 }
 
 void OutVideo::executeVideo(){
-    unsigned int i = 0;
-    while (i != ga.getVideoOri().size()) {
-        //Running Window CV
-        imshow("Adjust Window", ga.getVideoSeg().at(i));
+    //Get position
+    int i = ga.getPosVideo();
 
+    //Running Window CV
+    //imshow("Adjust Window", ga.getVideoSeg().at(i));
+
+    //Show CV::Mat on QLabel
+    showMatOnQLabel(i);
+
+    //Increment Video Position
+    i++;
+    ga.setPosVideo(i);
+    ga.setPosVideoAux(i);
+
+    this->ui->horizontalSlider->setValue(i);
+}
+
+void OutVideo::showMatOnQLabel(int pos)
+{
+    if(pos >= ga.getFrames()){
+        qDebug() << "Fim do vídeo";
+
+        this->timer->stop();
+    }
+    else{
         //Convert Image
         //Ori
-        QPixmap qPixOri = ASM::cvMatToQPixmap(ga.getVideoOri().at(i));
+        QPixmap qPixOri = ASM::cvMatToQPixmap(ga.getVideoOri().at(pos));
         this->ui->lbVideoOri->setPixmap(qPixOri);
         //Seg
-        QPixmap qPixSeg = ASM::cvMatToQPixmap(ga.getVideoSeg().at(i));
+        QPixmap qPixSeg = ASM::cvMatToQPixmap(ga.getVideoSeg().at(pos));
         this->ui->lbVideoSeg->setPixmap(qPixSeg);
-
-
-        if (waitKey(10) == 27) {
-            cout << "esc key is pressed by user" << endl;
-            break;
-        }
-        i++;
     }
 }
 
 void OutVideo::on_btPlay_clicked()
 {
-    executeVideo();
+    this->timer->start(1000/ga.getFps());
 }
+
+void OutVideo::on_btPause_clicked()
+{
+    this->timer->stop();
+}
+
+void OutVideo::on_sliderFramePress()
+{
+    this->timer->stop();
+}
+
+void OutVideo::on_sliderFrameRelease()
+{
+    if(ga.getPosVideo() == ga.getPosVideoAux() && ga.getPosVideo() != 0)
+        this->timer->start(1000/ga.getFps());
+}
+
+void OutVideo::on_sliderFrameMove(int mv)
+{
+    if(mv <= 0)
+        mv = 1;
+
+    this->timer->stop();
+
+    ga.setPosVideo(mv-1);
+
+    showMatOnQLabel(mv-1);
+}
+
+

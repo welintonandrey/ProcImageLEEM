@@ -8,7 +8,7 @@ Gallium::Gallium() {
 Gallium::Gallium(QString arq) {
     //Convert QString to std::string
     string str = arq.toUtf8().constData();
-
+    this->posVideo = 0;
     this->videoOri = readVideo(str);
 }
 
@@ -54,7 +54,6 @@ vector<Mat> Gallium::readVideo(string arq) {
         //If don't sucess (end of file) break operation
         if (!bSuccess) {
             //cout << "End of the Video" << endl;
-            cout << "Number of Frames: " << video.size() << endl;
             break;
         }
 
@@ -167,4 +166,28 @@ void Gallium::setFps(int f){
 
 int Gallium::getFps(){
     return this->fps;
+}
+
+void Gallium::setFrames(int f){
+    this->frames = f;
+}
+
+int Gallium::getFrames(){
+    return this->frames;
+}
+
+void Gallium::setPosVideo(int pos){
+    this->posVideo = pos;
+}
+
+int Gallium::getPosVideo(){
+    return this->posVideo;
+}
+
+void Gallium::setPosVideoAux(int posAux){
+    this->posVideo = posAux;
+}
+
+int Gallium::getPosVideoAux(){
+    return this->posVideoAux;
 }
